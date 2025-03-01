@@ -1,24 +1,6 @@
 import { BattlePokemon } from "./battle-pokemon";
-
-interface Pokemon {
-    name: string;
-    assetKey: string;
-    assetFrame?: number;
-    maxHp: number;
-    currentHp: number;
-    baseAttack: number;
-    attackIds: string[];
- }
- 
- interface BattlePokemonConfig {
-    scene: Phaser.Scene;
-    _pokemonDetails: Pokemon;
- }
- 
- interface Coordinate {
-    x: number;
-    y: number;
-}
+import { BattlePokemonConfig , Coordinate } from "./typedef"
+// import { POKEMON } from "./asset_keys";
 
 const ENEMY_LOCATION: Coordinate = {
     x: 700,
@@ -31,7 +13,7 @@ export class enemyPokemon extends BattlePokemon{
         super(config, ENEMY_LOCATION);
         this._scene.anims.create({
             key: '_phaserGameObject',
-            frames: this._scene.anims.generateFrameNames('bulbasaur'),
+            frames: this._scene.anims.generateFrameNames(this._pokemonDetails.name),
             frameRate: 5,
             repeat: -1, // Loop indefinitely
         });

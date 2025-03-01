@@ -1,4 +1,5 @@
 import Phaser, { Scene } from "phaser";
+import { HEALTH_BAR_ASSETS } from "./asset_keys"; 
 
 export class HealthBar {
     private scene: Scene;
@@ -11,11 +12,7 @@ export class HealthBar {
     private leftCapShadow!: Phaser.GameObjects.Image;
     private middleShadow!: Phaser.GameObjects.Image;
     private rightCapShadow!: Phaser.GameObjects.Image;
-    /**
-     * @param scene - The Phaser Scene.
-     * @param x - The x position of the health bar.
-     * @param y - The y position of the health bar.
-     */
+    
     constructor(scene: Scene, x: number, y: number) {
         this.scene = scene;
         this.fullWidth = 360 * 0.75; // Scaled width of the health bar
@@ -37,24 +34,20 @@ export class HealthBar {
         return this.healthBarContainer;
     }
 
-    /**
-     * Creates the visual components of the health bar.
-     * @param x - The x position.
-     * @param y - The y position.
-     */
+    
     private createHealthBarImages(x: number, y: number): void {
         this.leftCap = this.scene.add
-            .image(x, y, "healthleft")
+            .image(x, y, HEALTH_BAR_ASSETS.LEFT_CAP)
             .setOrigin(0, 0.5)
             .setScale(1, this.scaleY);
 
         this.middle = this.scene.add
-            .image(this.leftCap.x + this.leftCap.width, y, "healthmid")
+            .image(this.leftCap.x + this.leftCap.width, y,HEALTH_BAR_ASSETS.MIDDLE)
             .setOrigin(0, 0.5)
             .setScale(1, this.scaleY);
 
         this.rightCap = this.scene.add
-            .image(this.leftCap.x + this.leftCap.width + this.middle.width, y, "healthright") 
+            .image(this.leftCap.x + this.leftCap.width + this.middle.width, y, HEALTH_BAR_ASSETS.RIGHT_CAP) 
             .setOrigin(0, 0.5)
             .setScale(1, this.scaleY);
 
@@ -131,8 +124,8 @@ export class HealthBar {
                 this.rightCap.x = this.middle.x + this.middle.displayWidth;
     
                 // Log for debugging
-                console.log("Middle Display Width:", this.middle.displayWidth);
-                console.log("Right Cap X:", this.rightCap.x);
+                
+                
             },
             onComplete: () => {
                 if (options.callback) options.callback();

@@ -1,26 +1,28 @@
+export interface Pokemon {
+   name: string;
+   assetKey: string;
+   currentHp: number;
+   maxHp: number;
+   attackIds: number[];
+   baseAttack: number;
+   type: string;
+   level?: number; // Make this optional
+   spriteKeyFront?: string; // Make this optional
+   spriteKeyBack?: string; // Make this optional
+   moves?:[]; // Make this optional
+}
 
+export interface BattlePokemonConfig {
+   scene: Phaser.Scene;
+   _pokemonDetails: Pokemon;
+}
 
-interface Pokemon {
-    name: string;
-    assetKey: string;
-    assetFrame?: number;
-    maxHp: number;
-    currentHp: number;
-    baseAttack: number;
-    attackIds: string[];
- }
- 
- interface BattlePokemonConfig {
-    scene: Phaser.Scene;
-    _pokemonDetails: Pokemon;
- }
- 
- interface Coordinate {
-    x: number;
-    y: number;
- }
+export interface Coordinate {
+   x: number;
+   y: number;
+}
 
- interface Attack {
+export interface Attack {
    id: number;
    name : string;
    animationName: string;

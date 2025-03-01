@@ -1,24 +1,5 @@
 import { BattlePokemon } from "./battle-pokemon";
-
-interface Pokemon {
-    name: string;
-    assetKey: string;
-    assetFrame?: number;
-    maxHp: number;
-    currentHp: number;
-    baseAttack: number;
-    attackIds: string[];
- }
- 
- interface BattlePokemonConfig {
-    scene: Phaser.Scene;
-    _pokemonDetails: Pokemon;
- }
- 
- interface Coordinate {
-    x: number;
-    y: number;
-}
+import { BattlePokemonConfig , Coordinate } from "./typedef"
 
 const PLAYER_LOCATION: Coordinate = {
     x: 200,
@@ -35,4 +16,6 @@ export class playerPokemon extends BattlePokemon{
     addHealthBarComponents() {
         
     }
+
+
 }
