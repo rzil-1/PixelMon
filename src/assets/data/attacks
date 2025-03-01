@@ -1,0 +1,40 @@
+[
+    {
+        "id" : 1 , 
+        "name" : "Growl",
+        "animationName " : "GROWL",
+        "type" : "NORMAL"
+    },
+    {
+        "id" : 2 , 
+        "name" : "Thunder Shock",
+        "animationName " : "THUNDER_SHOCK",
+        "type" : "ELECTRIC"
+    },
+    {
+        "id" : 3, 
+        "name" : "Tail Whip",
+        "animationName " : "TAIL_WHIP",
+        "type" : "NORMAL"
+    },
+    {
+        "id" : 4, 
+        "name" : "Thuder Wave",
+        "animationName " : "THUNDER_WAVE",
+        "type" : "ELECTRIC"
+    },
+
+    {
+        "id" : 5, 
+        "name" : "Tackle",
+        "animationName " : "TACKLE",
+        "type" : "NORMAL"
+    },
+    
+    {
+        "id" : 6, 
+        "name" : "Vine Whip",
+        "animationName " : "VINE_WHIP",
+        "type" : "GRASS"
+    }
+]
